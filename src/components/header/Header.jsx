@@ -15,13 +15,13 @@ const Header = () => {
     setIsOpen(!isOpen)
 
   }
-  /* const handleLink = (href) => {
+  const handleLink = (href) => {
     if (pathName === href) {
       setIsOpen(false);
     } else {
       setIsOpen(false);
     }
-  }; */
+  }; 
 
   return (
     <div className={`fixed overflow-hidden z-30 w-full flex-col flex justify-between sm:justify-center items-top gap-2  bg-pink-200 transition-all duration-[1200ms] ${isOpen ? "h-screen " : "h-16"} `}>
@@ -40,7 +40,7 @@ const Header = () => {
           
         </div>
       
-        <div className={`w-full block sm:hidden fixed h-[100vh] transition-all  duration-[1200ms]  ${isOpen ? "opacity-100" : "opacity-0"} `} >
+        <div onClick={(href) => {handleLink}} className={`w-full block sm:hidden fixed h-[100vh] transition-all  duration-[1200ms]  ${isOpen ? "opacity-100" : "opacity-0"} `} >
           <DropLinks />
         </div>
       

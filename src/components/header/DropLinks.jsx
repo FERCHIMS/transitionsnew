@@ -27,15 +27,26 @@ const DropLinks = ({ }) => {
         }
     }, [])
 
+    
+
   return (
     <div ref={linkRef} className={` w-full pt-20 flex flex-col items-center justify-center ${isInView ? "opacity-100" : "opacity-0"} `}>
-        {links.map((link) => (
-            <div  key={link.title}>
+        <div className="max-h-screen w-full overflow-y-auto">
+            {links.map((link) => (
+            <div className=" flex flex-col "  key={link.title}>
                 <li className={`flex justify-center items-center transition duration-[1200ms] ${isInView ? "opacity-100" : "opacity-0"} `}>
                     <Link className="text-[4rem] text-center font-black"  href={link.href}>  {link.title} </Link>
                 </li>
+                <Link href="/">ESTO</Link>
+                {[...Array(20)].map((_,i) => (
+                    <Link key={i} href="/"> 
+                    ESTO
+                    </Link>
+                ))}
             </div>
         ))}
+        </div>
+        
     </div>
   )
 }

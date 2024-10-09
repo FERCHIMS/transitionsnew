@@ -3,7 +3,7 @@ import { links } from "./Links"
 import { useState, useEffect, useRef } from "react"
 
 
-const DropLinks = ({isOpen, onClick }) => {
+const DropLinks = ({ }) => {
     
     const [isInView, setIsInView] = useState(false);
     const linkRef = useRef(null);
@@ -32,7 +32,7 @@ const DropLinks = ({isOpen, onClick }) => {
         {links.map((link) => (
             <div  key={link.title}>
                 <li className={`flex justify-center items-center transition duration-[1200ms] ${isInView ? "opacity-100" : "opacity-0"} `}>
-                    <Link  onClick={onClick} isOpen={isOpen} className="text-[4rem] text-center font-black"  href={link.href}>  {link.title} </Link>
+                    <Link className="text-[4rem] text-center font-black"  href={link.href}>  {link.title} </Link>
                 </li>
             </div>
         ))}
